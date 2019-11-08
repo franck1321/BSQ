@@ -7,43 +7,53 @@
 
 #include "../../include/my.h"
 
-void put_in_array(char const *str, char **av)
+int word_len(const char *str, int i)
 {
-    int ac = 0;
-    int i = 0;
-    int lenght = 0;
-    int y = 0;
+    int cmp;
 
-    for (i = 0; str[i] != '\0'; i++, y = 0, ac++, lenght = 0) {
-        for (;(str[i] >= 'a' && str[i] <= 'z') ||
-        (str[i] >= 'A' && str[i] <= 'Z') ||
-        (str[i] >= 48 && str[i] <= 57); lenght++, i++) {
-        }
-        av[ac] = malloc(sizeof(char) * lenght);
-        i = i - lenght;
-        for (;(str[i] >= 'a' && str[i] <= 'z') ||
-        (str[i] >= 'A' && str[i] <= 'Z') ||
-        (str[i] >= 48 && str[i] <= 57); y++, i++) {
-            av[ac][y] = str[i];
-        }
+    cmp = 0;
+    while (str[i] && str[i] != '\n') {
+        cmp++;
+        i++;
     }
+    return (cmp);
+}
+
+int word_count(const char *str)
+{
+    int i;
+    int cmp;
+
+    i = 0;
+    cmp = 1;
+    while (str[i]) {
+        if (str[i] == '\n')
+    	cmp++;
+        i++;
+    }
+    return (cmp);
 }
 
 char **my_str_to_word_array(char const *str)
 {
-    int ac = 0;
-    int i = 0;
-    char **av = NULL;
+    char **tab;
+    int i;
+    int j;
+    int k;
 
-    for (i = 0; str[i] != '\0'; i++) {
-        while ((str[i] >= 'a' && str[i] <= 'z') ||
-        (str[i] >= 'A' && str[i] <= 'Z') ||
-        (str[i] >= 48 && str[i] <= 57)) {
+    i = 0;
+    j = 0;
+    tab = malloc((word_count(str) + 1) * sizeof(char *));
+    while (str[i]) {
+        k = 0;
+        tab[j] = malloc((word_len(str, i) + 1) * sizeof(char));
+        while (str[i] && str[i] != '\n')
+            tab[j][k++] = str[i++];
+        while (str[i] == '\n')
             i++;
-        }
-        ac++;
+        tab[j][k] = '\0';
+        j++;
     }
-    av = malloc(sizeof(char*) * ac);
-    put_in_array(str, av);
-    return (av);
+    tab[j] = '\0';
+    return (tab);
 }

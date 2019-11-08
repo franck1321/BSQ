@@ -45,17 +45,25 @@ char *my_revstr(char *str);
 char *open_file(char *filepath);
 void put_in_array(char const *str, char **av);
 char **my_str_to_word_array(char const *str);
+int word_len(const char *str, int i);
+int word_count(const char *str);
+void print_tab(char **tab);
 
 /* Fonction Du Programe */
 
 int check_char(char *map);
+int check_lenth_of_line(char *map);
+int check_one_line(char *map);
+char *get_nb_line(char *map);
+int check_nb_of_line(char *map);
 
 #endif /* MY_H */
 
 typedef struct position
 {
-    int y1;
-    int x1;
-    int y2;
-    int x2;
+    int pos_1;
+    int long_1;
+    int pos_2;
+    int long_2;
+    int len;
 } pos;

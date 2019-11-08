@@ -1,3 +1,10 @@
+##
+## EPITECH PROJECT, 2019
+## l
+## File description:
+## l
+##
+
 NAME	= bsq
 
 CC	= gcc
@@ -29,6 +36,7 @@ SRCS	= ./lib/my/my_getnbr.c \
 	  ./lib/my/my_swap.c \
 	  ./lib/my/open_file.c \
   	  ./lib/my/my_str_to_word_array.c \
+	  ./lib/my/print_tab.c \
 	  ./check_error.c \
 	  ./main.c 
 
