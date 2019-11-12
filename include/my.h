@@ -5,6 +5,7 @@
 ** l
 */
 
+
 #ifndef MY_H
 #define MY_H
 
@@ -18,6 +19,16 @@
 #include <time.h>
 #include <fcntl.h>
 
+typedef struct position {
+    int pos_x;
+    int pos_y;
+    int long_1;
+    int long_2;
+    int pos;
+    int len;
+    int size_x;
+    int size_y;
+} pos_t;
 
 int my_getnbr(char *str);
 int my_isneg(int n);
@@ -57,13 +68,7 @@ int check_one_line(char *map);
 char *get_nb_line(char *map);
 int check_nb_of_line(char *map);
 
+/*         END          */
+
 #endif /* MY_H */
 
-typedef struct position
-{
-    int pos_1;
-    int long_1;
-    int pos_2;
-    int long_2;
-    int len;
-} pos;
