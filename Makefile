@@ -35,10 +35,11 @@ SRCS	= ./lib/my/my_getnbr.c \
 	  ./lib/my/my_strupcase.c \
 	  ./lib/my/my_swap.c \
 	  ./lib/my/open_file.c \
-  	  ./lib/my/my_str_to_word_array.c \
+      ./lib/my/my_str_to_word_array.c \
 	  ./lib/my/print_tab.c \
-	  ./check_error.c \
-	  ./main.c 
+	  ./src/check_error.c \
+	  ./src/main.c \
+	  ./src/bsq.c
 
 OBJS	= $(SRCS:.c=.o)
 

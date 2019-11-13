@@ -19,16 +19,6 @@
 #include <time.h>
 #include <fcntl.h>
 
-typedef struct position {
-    int pos_x;
-    int pos_y;
-    int long_1;
-    int long_2;
-    int pos;
-    int len;
-    int size_x;
-    int size_y;
-} pos_t;
 
 int my_getnbr(char *str);
 int my_isneg(int n);
@@ -60,13 +50,29 @@ int word_len(const char *str, int i);
 int word_count(const char *str);
 void print_tab(char **tab);
 
-/* Fonction Du Programe */
+/* Fonction Du program */
+
+typedef struct position {
+    int pos_x;
+    int pos_y;
+    int long_1;
+    int long_2;
+    int pos;
+    int len;
+    int size_x;
+    int size_y;
+} pos_t;
 
 int check_char(char *map);
 int check_lenth_of_line(char *map);
 int check_one_line(char *map);
 char *get_nb_line(char *map);
 int check_nb_of_line(char *map);
+int count_lenth_of_line(char **map);
+int count_nb_of_line(char **map);
+int check_square(char **map, int y, int x, pos_t *p);
+void check_bsq(char **map, int y, int x, pos_t *p);
+void make_square(char **map, pos_t *p);
 
 /*         END          */
 

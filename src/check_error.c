@@ -5,7 +5,7 @@
 ** l
 */
 
-#include "include/my.h"
+#include "../include/my.h"
 
 int check_char(char *map)
 {

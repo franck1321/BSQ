@@ -9,8 +9,8 @@
 
 void print_tab(char **tab)
 {
-    int y = 0, x = 0; 
-    
+    int y = 0, x = 0;
+
     while (tab[y]) {
         while (tab[y][x] != '\0') {
             my_putchar(tab[y][x]);
