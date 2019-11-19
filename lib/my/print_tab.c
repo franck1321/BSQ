@@ -9,7 +9,7 @@
 
 void print_tab(char **tab)
 {
-    int y = 0, x = 0;
+    int y = 1, x = 0;
 
     while (tab[y]) {
         while (tab[y][x] != '\0') {
