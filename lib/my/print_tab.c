@@ -9,15 +9,11 @@
 
 void print_tab(char **tab)
 {
-    int y = 1, x = 0;
+    int y = 1;
 
     while (tab[y]) {
-        while (tab[y][x] != '\0') {
-            my_putchar(tab[y][x]);
-            x++;
-        }
-        my_putchar('\n');
-        x = 0;
+        write(1, tab[y], my_strlen(tab[y] + 1));
+        write(1, "\n", 1);
         y++;
     }
 }
