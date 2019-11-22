@@ -71,7 +71,10 @@ char *get_nb_line(char *map)
     if (nb == NULL)
         return (NULL);
     for (; y != i; y++) {
-        nb[y] = map[y];
+        if (map[y] >= '0' && map[y] <= '9')
+            nb[y] = map[y];
+        else
+            return (NULL);
     }
     return (nb);
 }
@@ -79,8 +82,13 @@ char *get_nb_line(char *map)
 int check_nb_of_line(char *map)
 {
     int i = 0, y = 0;
-    int nb_line = my_getnbr(get_nb_line(map));
+    int nb_line = 0;
+    char *nb_line_s = get_nb_line(map);
 
+    if (nb_line_s == NULL)
+        return (84);
+    else
+        nb_line = my_getnbr(nb_line_s);
     for (; map[i] != '\n'; i++);
     i++;
     for (; map[i] != '\0'; i++) {
